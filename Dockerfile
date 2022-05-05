@@ -5,4 +5,4 @@ COPY etc/nginx/conf.d/proxy_conf.inc /etc/nginx/conf.d/proxy_conf.inc
 
 ENTRYPOINT [ "/usr/local/openresty/bin/openresty -g \"daemon off;\"" ]
 
-EXPOSE 80
+EXPOSE 8000
