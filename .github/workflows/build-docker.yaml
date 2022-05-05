@@ -21,6 +21,7 @@ jobs:
           ghcr.io/dfourio/dfour-proxy/dfour-proxy
         # generate Docker tags based on the following events/attributes
         tags: |
+          type=ref,event=branch
           type=edge,branch=$repo.default_branch,value=latest
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}
