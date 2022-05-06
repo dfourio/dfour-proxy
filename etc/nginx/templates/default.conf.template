@@ -1,19 +1,19 @@
 upstream django {
-    server docker-hub-01.gunicorn:8081;
+    server ${NGINX_HUB_UPSTREAM};
 }
 
 server {
-    listen 8000 default_server;
+    listen ${NGINX_PORT};
 
-    access_log /dev/stdout;
-    error_log /dev/stdout error;
+    access_log ${NGINX_ACCESS_LOG};
+    error_log ${NGINX_ERROR_LOG} error;
 
-    client_max_body_size 25M;
+    client_max_body_size ${NGINX_MAX_BODY_SIZE}; # 25M
 
-    root /var/services/django/static/dist/; # for production build
+    root /var/services/django/static/dist/;
 
     location /static {
-        alias /var/services/django/static;
+        alias /var/servicedocker-hub-0.gunicorn:8081/django/static;
         access_log off;
     }
 
