@@ -13,7 +13,7 @@ server {
     root /var/services/django/static/dist/;
 
     location /static {
-        alias /var/servicedocker-hub-0.gunicorn:8081/django/static;
+        alias /var/services/django/static;
         access_log off;
     }
 
