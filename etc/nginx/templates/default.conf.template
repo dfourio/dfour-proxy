@@ -3,7 +3,9 @@ upstream django {
 }
 
 server {
-    listen ${NGINX_PORT};
+    listen ${NGINX_PORT} default_server proxy_protocol;
+
+    server_name ${NGINX_SERVER_NAME};
 
     access_log ${NGINX_ACCESS_LOG};
     error_log ${NGINX_ERROR_LOG} error;
