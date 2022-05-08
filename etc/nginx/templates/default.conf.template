@@ -1,6 +1,5 @@
 upstream django {
     server ${NGINX_HUB_UPSTREAM};
-    keepalive 2;
 }
 
 server {
