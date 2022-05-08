@@ -4,7 +4,7 @@ upstream django {
 }
 
 server {
-    listen ${NGINX_PORT};
+    listen ${NGINX_PORT} proxy_protocol;
 
      # server_name ${NGINX_SERVER_NAME};
 
@@ -47,7 +47,5 @@ server {
         }
     }
 
-    location / {
-        rewrite ^/$ /gmanage last;
-    }
+    rewrite ^/$ /gmanage last;
 }
