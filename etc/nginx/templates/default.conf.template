@@ -46,4 +46,8 @@ server {
             break;
         }
     }
+
+    location / {
+        rewrite ^/$ /gmanage last;
+    }
 }
