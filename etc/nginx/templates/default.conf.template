@@ -1,9 +1,10 @@
 upstream django {
     server ${NGINX_HUB_UPSTREAM};
+    keepalive 2;
 }
 
 server {
-    listen ${NGINX_PORT} default_server proxy_protocol;
+    listen ${NGINX_PORT} default_server;
 
     server_name ${NGINX_SERVER_NAME};
 
