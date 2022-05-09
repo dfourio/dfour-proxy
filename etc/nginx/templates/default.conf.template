@@ -46,5 +46,5 @@ server {
         }
     }
 
-    rewrite ^/$ /gmanage last;
+    rewrite ^/$ /gmanage redirect;
 }
