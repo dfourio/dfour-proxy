@@ -46,5 +46,5 @@ server {
         }
     }
 
-    rewrite ^/$ /gmanage redirect;
+    rewrite ^/$ https://${NGINX_SERVER_NAME}/gmanage redirect;
 }
